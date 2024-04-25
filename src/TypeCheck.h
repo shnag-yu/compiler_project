@@ -16,12 +16,14 @@ typedef std::unordered_map<string, tc_type> typeMap;
 typedef std::unordered_map<string, vector<aA_varDecl>*> paramMemberMap; 
 
 void check_Prog(std::ostream& out, aA_program p);
-void check_VarDecl(std::ostream& out, aA_varDeclStmt vd);
+void check_Global_VarDecl(std::ostream& out, aA_varDeclStmt vd);
+void check_Local_VarDecl(std::ostream& out, aA_varDeclStmt vd);
+
 void check_StructDef(std::ostream& out, aA_structDef sd);
 void check_FnDecl(std::ostream& out, aA_fnDecl fd);
 void check_FnDeclStmt(std::ostream& out, aA_fnDeclStmt fd);
 void check_FnDef(std::ostream& out, aA_fnDef fd);
-void check_CodeblockStmt(std::ostream& out, aA_codeBlockStmt cs);
+void check_CodeblockStmt(std::ostream& out, aA_codeBlockStmt cs, aA_type retType);
 void check_AssignStmt(std::ostream& out, aA_assignStmt as);
 void check_ArrayExpr(std::ostream& out, aA_arrayExpr ae);
 tc_type check_MemberExpr(std::ostream& out, aA_memberExpr me);

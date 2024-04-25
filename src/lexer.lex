@@ -15,7 +15,7 @@ int calc(char *s, int len);
 <INITIAL>{
 "//" {BEGIN COMMENT1;}
 "/*" {BEGIN COMMENT2;}
-[\n\r] {line=line+1;col=0;}
+[\n\r] {line=line+1;col=1;}
 "+" {yylval.pos=A_Pos(line,col);col+=strlen(yytext);return ADD;}
 "-" {yylval.pos=A_Pos(line,col);col+=strlen(yytext);return SUB;}
 "*" {yylval.pos=A_Pos(line,col);col+=strlen(yytext);return MUL;}
