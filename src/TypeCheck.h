@@ -35,7 +35,7 @@ tc_type check_ArithExpr(std::ostream& out, aA_arithExpr ae);
 void check_FuncCall(std::ostream& out, aA_fnCall fc);
 void check_WhileStmt(std::ostream& out, aA_whileStmt ws);
 void check_CallStmt(std::ostream& out, aA_callStmt cs);
-void check_ReturnStmt(std::ostream& out, aA_returnStmt rs);
+void check_ReturnStmt(std::ostream& out, aA_returnStmt rs, aA_type retType);
 
 struct tc_type_{
     aA_type type;

@@ -421,6 +421,10 @@ RightVal{
 VarDefScalar:
 Id COLON Type ASSIGN RightVal{
   $$ = A_VarDefScalar($1->pos,$1->id,$3,$5);
+}
+|
+Id ASSIGN RightVal{
+  $$ = A_VarDefScalar($1->pos,$1->id,NULL,$3);
 };
 
 //23 带数组的 比如a[1]:int = {1}
@@ -435,6 +439,10 @@ Id LEFT_SQUARE_BRACKET Num RIGHT_SQUARE_BRACKET COLON Type ASSIGN LEFT_BRACE Rig
 VarDeclScalar:
 Id COLON Type{
   $$ = A_VarDeclScalar($1->pos,$1->id,$3);
+}
+|
+Id{
+  $$ = A_VarDeclScalar($1->pos,$1->id,NULL);
 };
 
 //25 a[1]:int
@@ -442,6 +450,10 @@ Id COLON Type{
 VarDeclArray:
 Id LEFT_SQUARE_BRACKET Num RIGHT_SQUARE_BRACKET COLON Type{
   $$ = A_VarDeclArray($1->pos,$1->id,$3->num,$6);
+}
+|
+Id LEFT_SQUARE_BRACKET Num RIGHT_SQUARE_BRACKET{
+  $$ = A_VarDeclArray($1->pos,$1->id,$3->num,NULL);
 }
 
 //26

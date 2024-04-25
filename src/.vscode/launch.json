@@ -7,7 +7,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/compiler",
-            "args": ["t.tea", "t.ast"],
+            "args": ["tests/00_test.tea", "tests/00_test.ast"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
